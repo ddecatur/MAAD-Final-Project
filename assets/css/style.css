@@ -1,0 +1,130 @@
+:root {
+    --body: rgb(255, 255, 255);
+    --box: rgb(255, 255, 255);
+    --main: rgb(0, 0, 0); 
+    --width: 800px;
+}
+
+.horizontal_center {
+    text-align: center;
+}
+
+body {
+    background-color: var(--body);
+    text-align: center;
+    margin: auto;
+    width: var(--width);
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: inline-block;
+}
+
+input[type=checkbox][id^="imageCB"] {
+    display:none;
+}
+
+
+label {
+    border: 1px solid #fff;
+    padding: 10px;
+    display: block;
+    position: relative;
+    margin: 10px;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  label::before {
+    background-color: white;
+    color: white;
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    border: 1px solid grey;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 28px;
+    transition-duration: 0.4s;
+    transform: scale(0);
+}
+  
+label img {
+    height: 180px;
+    width: 180px;
+    transition-duration: 0.2s;
+    transform-origin: 50% 50%;
+}
+  
+:checked+label {
+    border-color: #ddd;
+}
+  
+/* :checked+label::before {
+    content: "";
+    background-color: grey;
+    transform: scale(1);
+} */
+  
+:checked+label img {
+    transform: scale(0.9);
+    box-shadow: 0 0 5px #333;
+    border: 5px solid rgb(255, 0, 0);
+    z-index: -1;
+}
+
+/* label::before {
+    background-image: url(assets/images/forrest1.jpeg);
+}
+
+:checked + label::before {
+    background-image: url(assets/images/forrest1.jpeg);
+} */
+
+
+/* input#thing1[type=checkbox] + label
+{
+    background-image: url("assets/images/forrest1.jpeg");
+    height: 50px;
+    width: 50px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+} */
+
+
+.gifs {
+    background-color: var(--box);
+    text-align: center;
+    margin: auto;
+    width: var(--width);
+    overflow: hidden;
+}
+
+.gifs4 {
+    background-color: var(--box);
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+.gif {
+    width: var(--width)/2;
+}
+
+.gif4 {
+    width: 25%;
+}

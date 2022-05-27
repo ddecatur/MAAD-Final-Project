@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <title>MAAD Final Project: images2poem</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=d8b37d00c80b9682214fb1bc69720d0e4c77a9d1">
+</head>
+<body>
+    <div class="body">
+        <ul>
+            <li>
+                <input type="checkbox" id="imageCB1"/>
+                <label for="imageCB1"><img src="assets/images/forrest1.jpeg" /></label>
+            </li>
+            <li>
+                <input type="checkbox" id="imageCB2"/>
+                <label for="imageCB2"><img src="assets/images/desert1.jpeg" /></label>
+            </li>
+            <li>
+                <input type="checkbox" id="imageCB3"/>
+                <label for="imageCB3"><img src="assets/images/ice_cream1.jpeg" /></label>
+            </li>
+            <li>
+                <input type="checkbox" id="imageCB4"/>
+                <label for="imageCB4"><img src="assets/images/tree1.jpg" /></label>
+            </li>
+            <li>
+                <input type="checkbox" id="imageCB5"/>
+                <label for="imageCB5"><img src="assets/images/beach1.jpeg" /></label>
+            </li>
+        </ul>
+        <button type="button" onclick="myFunction()">Create Poem</button>
+        <p id="poem" style="display:none">Placeholder text</p>
+    </div>
+
+    <script>
+        function myFunction() {
+            var checkBox1 = document.getElementById("imageCB1");
+            var checkBox2 = document.getElementById("imageCB2");
+            var checkBox3 = document.getElementById("imageCB3");
+            var checkBox4 = document.getElementById("imageCB4");
+            var checkBox5 = document.getElementById("imageCB5");
+            var imageCBs = [checkBox1, checkBox2, checkBox3, checkBox4, checkBox5];
+            var imageCaptions = [
+                "a misty morning on the lake",
+                "sand dunes in the desert",
+                "little boy eating ice cream in the park",
+                "sunlight shining through the leaves of trees in a park",
+                "sand on the beach with waves"
+            ]
+            var poem = document.getElementById("poem");
+            let text = "";
+            for (let i = 0; i < imageCBs.length; i++) {
+                if (imageCBs[i].checked == true) {
+                    text += imageCaptions[i] + "<br>";
+                }
+            }
+            text += "this is summer"
+            poem.innerHTML = text;
+            poem.style.display = "block";
+        }
+    </script>
+</body>
+</html>
